@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💝 Para Bruna - Com Amor</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #ff69b4 0%, #ff1493 25%, #ff69b4 50%, #ff1493 75%, #ff69b4 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(255, 20, 147, 0.4);
+            padding: 50px;
+            text-align: center;
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: 3.5em;
+            color: #ff1493;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(255, 20, 147, 0.2);
+        }
+
+        .subtitle {
+            font-size: 1.5em;
+            color: #ff69b4;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        .phrases-section {
+            margin: 40px 0;
+        }
+
+        .phrase-container {
+            background: linear-gradient(135deg, #ffe0ec 0%, #fff0f5 100%);
+            border-left: 5px solid #ff1493;
+            padding: 30px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(255, 20, 147, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .phrase-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 20, 147, 0.3);
+        }
+
+        .phrase-text {
+            font-size: 1.3em;
+            color: #c71585;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        .phrase-emoji {
+            font-size: 2em;
+            margin-right: 10px;
+        }
+
+        .gifts-section {
+            margin: 50px 0;
+            padding-top: 40px;
+            border-top: 3px solid #ff69b4;
+        }
+
+        .gifts-title {
+            font-size: 2.5em;
+            color: #ff1493;
+            margin-bottom: 30px;
+        }
+
+        .gifts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .gift-card {
+            background: linear-gradient(135deg, #fff5f7 0%, #ffe0ec 100%);
+            border: 2px solid #ff69b4;
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 20, 147, 0.2);
+        }
+
+        .gift-card:hover {
+            transform: scale(1.05) rotate(-2deg);
+            box-shadow: 0 15px 30px rgba(255, 20, 147, 0.3);
+            border-color: #ff1493;
+        }
+
+        .gift-emoji {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .gift-name {
+            font-size: 1.3em;
+            color: #ff1493;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .gift-description {
+            font-size: 0.95em;
+            color: #c71585;
+            line-height: 1.5;
+        }
+
+        .heart-decoration {
+            font-size: 2em;
+            margin: 20px 0;
+            animation: heartBeat 1.3s ease-in-out infinite;
+        }
+
+        @keyframes heartBeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.3); }
+            50% { transform: scale(1); }
+        }
+
+        .footer {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid #ff69b4;
+            font-size: 1.1em;
+            color: #c71585;
+            font-style: italic;
+        }
+
+        .button {
+            background: linear-gradient(135deg, #ff1493 0%, #ff69b4 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1em;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 20px 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 20, 147, 0.3);
+            font-weight: bold;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 20, 147, 0.5);
+        }
+
+        .button:active {
+            transform: translateY(-1px);
+        }
+
+        .message-box {
+            background: #fff0f5;
+            border: 2px solid #ff69b4;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+            color: #c71585;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px;
+            }
+
+            h1 {
+                font-size: 2.5em;
+            }
+
+            .gifts-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>💕 Bruna 💕</h1>
+        <p class="subtitle">Para a mulher que enche meu coração de amor</p>
+
+        <div class="heart-decoration">💗</div>
+
+        <div class="phrases-section">
+            <h2 style="color: #ff1493; font-size: 2em; margin-bottom: 30px;">✨ Frases de Amor ✨</h2>
+            
+            <div class="phrase-container">
+                <p class="phrase-text"><span class="phrase-emoji">💑</span>"Bruna, você não é apenas meu amor, você é minha vida. Cada momento com você é um presente precioso."</p>
+            </div>
+
+            <div class="phrase-container">
+                <p class="phrase-text"><span class="phrase-emoji">⭐</span>"Se pudesse escolher qualquer pessoa no mundo, sempre escolheria você, Bruna. Você é meu tudo."</p>
+            </div>
+
+            <div class="phrase-container">
+                <p class="phrase-text"><span class="phrase-emoji">🌹</span>"Seu sorriso é o amanhecer do meu dia, seu beijo é a paz da minha noite. Bruna, você me completa."</p>
+            </div>
+
+            <div class="phrase-container">
+                <p class="phrase-text"><span class="phrase-emoji">💫</span>"Com você descobri que amar é a coisa mais bonita do mundo. Obrigado por ser meu tudo, Bruna."</p>
+            </div>
+
+            <div class="phrase-container">
+                <p class="phrase-text"><span class="phrase-emoji">🎁</span>"Bruna, você é meu amor, meu sonho, minha melhor decisão. Quero passar a vida toda com você."</p>
+            </div>
+
+            <div class="phrase-container">
+                <p class="phrase-text"><span class="phrase-emoji">💌</span>"Cada batida do meu coração diz: Bruna, Bruna, Bruna. Você é a razão da minha felicidade."</p>
+            </div>
+
+            <div class="phrase-container">
+                <p class="phrase-text"><span class="phrase-emoji">✨</span>"Encontrar você foi o melhor acaso da minha vida. Bruna, você é meu para sempre."</p>
+            </div>
+
+            <div class="phrase-container">
+                <p class="phrase-text"><span class="phrase-emoji">🌟</span>"Você é bonita não só por fora, mas principalmente por dentro. Amo tudo em você, Bruna."</p>
+            </div>
+        </div>
+
+        <div class="heart-decoration">💗</div>
+
+        <div class="gifts-section">
+            <h2 class="gifts-title">🎁 Ideias de Presentes Românticos 🎁</h2>
+            <p style="color: #c71585; font-size: 1.1em; margin-bottom: 20px;">Presentes que vão fazer seu dia ainda mais especial</p>
+
+            <div class="gifts-grid">
+                <div class="gift-card">
+                    <div class="gift-emoji">💍</div>
+                    <div class="gift-name">Joia Personalizada</div>
+                    <div class="gift-description">Colar, pulseira ou anel com iniciais ou data especial gravada</div>
+                </div>
+
+                <div class="gift-card">
+                    <div class="gift-emoji">🌹</div>
+                    <div class="gift-name">Flores Frescas</div>
+                    <div class="gift-description">Rosas vermelhas ou arranjo florar com sua flor favorita</div>
+                </div>
+
+                <div class="gift-card">
+                    <div class="gift-emoji">🍫</div>
+                    <div class="gift-name">Chocolates Premium</div>
+                    <div class="gift-description">Caixa de chocolates belgas ou trutas gourmet</div>
+                </div>
+
+                <div class="gift-card">
+                    <div class="gift-emoji">📷</div>
+                    <div class="gift-name">Álbum de Fotos</div>
+                    <div class="gift-description">Álbum personalizado com suas melhores memórias juntos</div>
+                </div>
+
+                <div class="gift-card">
+                    <div class="gift-emoji">💌</div>
+                    <div class="gift-name">Caixa de Cartas</div>
+                    <div class="gift-description">Cartas de amor seladas para ela ler em momentos especiais</div>
+                </div>
+
+                <div class="gift-card">
+                    <div class="gift-emoji">🎵</div>
+                    <div class="gift-name">Playlist Especial</div>
+                    <div class="gift-description">Playlist com "nossas músicas" - crie na Spotify com capa personalizada</div>
+                </div>
+
+                <div class="gift-card">
+                    <div class="gift-emoji">🕯️</div>
+                    <div class="gift-name">Velas Aromáticas</div>
+                    <div class="gift-description">Velas perfumadas em aromas relaxantes e românticos</div>
+                </div>
+
+                <div class="gift-card">
+                    <div class="gift-emoji">💝</div>
+                    <div class="gift-name">Caixa Surpresa</div>
+                    <div class="gift-description">Caixa personalizada cheia de pequenos presentes e bilhetinhos</div>
+                </div>
+
+                <div class="gift-card">
+                    <div class="gift-emoji">✍️</div>
+                    <div class="gift-name">Quadro Personalizado</div>
+                    <div class="gift-description">Quadro com frase de amor ou foto do casal moldada</div>
+                </div>
+
+                <div class="gift-card">
+                    <div class="gift-emoji">🍽️</div>
+                    <div class="gift-name">Jantar Especial</div>
+                    <div class="gift-description">Prepare um jantar romântico em casa com velas e sua comida favorita</div>
+                </div>
+
+                <div class="gift-card">
+                    <div class="gift-emoji">🎀</div>
+                    <div class="gift-name">Roupão Luxuoso</div>
+                    <div class="gift-description">Roupão ou pijama luxuoso e confortável</div>
+                </div>
+
+                <div class="gift-card">
+                    <div class="gift-emoji">🌌</div>
+                    <div class="gift-name">Noite Sob as Estrelas</div>
+                    <div class="gift-description">Piquenique noturno ou simplesmente deitar olhando para o céu</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="heart-decoration">💗</div>
+
+        <div class="message-box">
+            <p style="font-size: 1.2em; font-weight: bold; color: #ff1493;">💑 O Presente Mais Importante 💑</p>
+            <p style="margin-top: 15px; line-height: 1.8;">O melhor presente que você pode dar à Bruna é seu tempo, atenção e amor genuíno. Cada momento compartilhado, cada gesto carinhoso, cada palavra sincera vale mais do que qualquer presente material. O amor verdadeiro é demonstrado todos os dias através de pequenas ações.</p>
+        </div>
+
+        <div class="footer">
+            <p>💕 Que seu amor por Bruna seja tão bonito quanto este momento 💕</p>
+            <button class="button" onclick="alert('Bruna é especial demais! 💕')">Clique para uma mensagem especial</button>
+            <button class="button" onclick="window.location.reload()">Recomeçar</button>
+        </div>
+    </div>
+</body>
+</html>
