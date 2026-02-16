@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Surpresa Romântica para Bruna 💖</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: radial-gradient(circle at top, #ffe3ec 0%, #ffc1e3 35%, #ff99c8 70%, #ff70a6 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: #4a154b;
+        }
+
+        .container {
+            max-width: 1100px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.96);
+            border-radius: 24px;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+            padding: 30px 24px 34px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                padding: 40px 42px 46px;
+            }
+        }
+
+        .floating-hearts {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .floating-hearts span {
+            position: absolute;
+            font-size: 18px;
+            color: rgba(255, 105, 180, 0.45);
+            animation: floatUp 10s linear infinite;
+        }
+
+        .floating-hearts span:nth-child(1) { left: 10%; animation-duration: 9s; }
+        .floating-hearts span:nth-child(2) { left: 25%; animation-duration: 11s; animation-delay: 3s; }
+        .floating-hearts span:nth-child(3) { left: 40%; animation-duration: 10s; animation-delay: 1s; }
+        .floating-hearts span:nth-child(4) { left: 60%; animation-duration: 12s; animation-delay: 4s; }
+        .floating-hearts span:nth-child(5) { left: 80%; animation-duration: 9s; animation-delay: 2s; }
+
+        @keyframes floatUp {
+            0% {
+                top: 100%;
+                transform: translateY(0) scale(0.8);
+                opacity: 0;
+            }
+            20% {
+                opacity: 0.7;
+            }
+            80% {
+                opacity: 0.7;
+            }
+            100% {
+                top: -10%;
+                transform: translateY(-100%) scale(1.2);
+                opacity: 0;
+            }
+        }
+
+        .heart-pulse {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            top: -10px;
+            right: -10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: pulse 1.8s infinite;
+            pointer-events: none;
+        }
+
+        .heart-pulse::before,
+        .heart-pulse::after {
+            content: "";
+            position: absolute;
+            width: 60px;
+            height: 96px;
+            background: #ff4081;
+            border-radius: 60px 60px 0 0;
+        }
+
+        .heart-pulse::before {
+            transform: rotate(-45deg);
+            transform-origin: 0 100%;
+            left: 50%;
+        }
+
+        .heart-pulse::after {
+            transform: rotate(45deg);
+            transform-origin: 100% 100%;
+            right: 50%;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.9;
+            }
+            50% {
+                transform: scale(1.15);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 0.9;
+            }
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            color: #c2185b;
+            margin-bottom: 6px;
+        }
+
+        header h2 {
+            font-size: 1.1rem;
+            color: #5d1049;
+            opacity: 0.9;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 0.95rem;
+            color: #6a1b9a;
+        }
+
+        .sections {
+            display: grid;
+            grid-template-columns: 1.1fr;
+            gap: 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (min-width: 900px) {
+            .sections {
+                grid-template-columns: 1.1fr 1.1fr;
+            }
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.97);
+            border-radius: 18px;
+            padding: 18px 18px 20px;
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(255, 64, 129, 0.14);
+        }
+
+        .card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+            color: #ad1457;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card h3 span {
+            font-size: 1.25rem;
+        }
+
+        .phrases {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 0.97rem;
+            color: #4a235a;
+        }
+
+        .phrase {
+            padding: 10px 11px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, rgba(255, 248, 251, 0.95), rgba(255, 228, 240, 0.95));
+            border: 1px solid rgba(255, 64, 129, 0.16);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .phrase::before {
+            content: "❤";
+            position: absolute;
+            right: 10px;
+            bottom: 7px;
+            font-size: 0.9rem;
+            color: rgba(233, 30, 99, 0.55);
+        }
+
+        .phrases strong {
+            color: #c2185b;
+        }
+
+        .phrases p {
+            margin-bottom: 8px;
+        }
+
+        .phrases span {
+            display: inline-block;
+            margin-top: 4px;
+            font-size: 0.85rem;
+            color: #8e24aa;
+        }
+
+        .gifts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .gift {
+            padding: 11px 10px;
+            border-radius: 14px;
+            background: linear-gradient(145deg, #fff0f4, #ffe5ef);
+            border: 1px solid rgba(244, 143, 177, 0.7);
+            cursor: pointer;
+            transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+            font-size: 0.9rem;
+            color: #4a235a;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .gift:hover {
+            transform: translateY(-3px) scale(1.01);
+            box-shadow: 0 10px 20px rgba(233, 30, 99, 0.18);
+            border-color: #ec407a;
+        }
+
+        .gift-title {
+            font-weight: 600;
+            color: #ad1457;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .gift-title span {
+            font-size: 1.1rem;
+        }
+
+        .gift-note {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        .gift-extra {
+            font-size: 0.8rem;
+            color: #8e24aa;
+        }
+
+        /* Seção Momentos */
+
+        #momentos-section {
+            margin-top: 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        #momentos-section .card {
+            margin-top: 4px;
+        }
+
+        .momentos-header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .momentos-header-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #ad1457;
+            font-size: 1.05rem;
+        }
+
+        .momentos-header-title span {
+            font-size: 1.3rem;
+        }
+
+        .momentos-input-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .momentos-input-label {
+            font-size: 0.85rem;
+            color: #6a1b9a;
+        }
+
+        .momentos-input {
+            position: relative;
+            overflow: hidden;
+            border-radius: 999px;
+            background: linear-gradient(135deg, #ff80ab, #ff4081);
+            color: #ffffff;
+            padding: 7px 14px;
+            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            box-shadow: 0 6px 14px rgba(233, 30, 99, 0.4);
+        }
+
+        .momentos-input span {
+            font-size: 1rem;
+        }
+
+        .momentos-input input[type="file"] {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .momentos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 10px;
+            margin-top: 6px;
+        }
+
+        .momento-item {
+            border-radius: 12px;
+            overflow: hidden;
+            background: #fce4ec;
+            border: 1px solid rgba(233, 30, 99, 0.35);
+            position: relative;
+            min-height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4px;
+        }
+
+        .momento-item img,
+        .momento-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 9px;
+        }
+
+        .momento-item video {
+            background: #000;
+        }
+
+        .momento-placeholder {
+            font-size: 0.9rem;
+            color: #8e24aa;
+            text-align: center;
+            padding: 12px;
+        }
+
+        footer {
+            margin-top: 22px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #7b1fa2;
+            position: relative;
+            z-index: 1;
+        }
+
+        footer span {
+            font-size: 1rem;
+            margin: 0 4px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="floating-hearts">
+        <span>💗</span>
+        <span>💞</span>
+        <span>💘</span>
+        <span>💕</span>
+        <span>💓</span>
+    </div>
+    <div class="heart-pulse"></div>
+
+    <header>
+        <h1>Para a mulher que enche meu coração de amor 💖</h1>
+        <h2>Bruna, esse cantinho foi criado só para você.</h2>
+        <p>Cada frase, cada ideia e cada detalhe aqui é um jeito de dizer o quanto você é especial para mim.</p>
+    </header>
+
+    <div class="sections">
+        <section class="card">
+            <h3><span>💌</span> Palavras que vêm do meu coração para você, Bruna</h3>
+            <div class="phrases">
+                <div class="phrase">
+                    💑 “Bruna, você não é apenas meu amor, você é minha vida. Cada momento com você é um presente precioso.”
+                </div>
+                <div class="phrase">
+                    ⭐ “Se pudesse escolher qualquer pessoa no mundo, sempre escolheria você, Bruna. Você é meu tudo.”
+                </div>
+                <div class="phrase">
+                    🌹 “Seu sorriso é o amanhecer do meu dia, seu beijo é a paz da minha noite. Bruna, você me completa.”
+                </div>
+                <div class="phrase">
+                    💫 “Com você descobri que amar é a coisa mais bonita do mundo. Obrigado por ser meu tudo, Bruna.”
+                </div>
+                <div class="phrase">
+                    🎁 “Bruna, você é meu amor, meu sonho, minha melhor decisão. Quero passar a vida toda com você.”
+                </div>
+                <div class="phrase">
+                    💌 “Cada batida do meu coração diz: Bruna, Bruna, Bruna. Você é a razão da minha felicidade.”
+                </div>
+                <div class="phrase">
+                    ✨ “Encontrar você foi o melhor acaso da minha vida. Bruna, você é meu para sempre.”
+                </div>
+                <div class="phrase">
+                    🌟 “Você é bonita não só por fora, mas principalmente por dentro. Amo tudo em você, Bruna.”
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h3><span>🎁</span> Presentes que vão fazer seu dia ainda mais especial</h3>
+            <p style="font-size: 0.9rem; color: #6a1b9a; margin-bottom: 6px;">
+                Ideias pensadas com carinho para te mimar e mostrar, em gestos, o quanto você é amada.
+            </p>
+            <div class="gifts-grid">
+                <div class="gift">
+                    <div class="gift-title"><span>📖</span>Livro de memórias</div>
+                    <div class="gift-note">Um caderno com fotos, ingressos, bilhetes e pequenos textos contando a nossa história.</div>
+                    <div class="gift-extra">Cada página, um capítulo do nosso amor.</div>
+                </div>
+                <div class="gift">
+                    <div class="gift-title"><span>🌌</span>Noite das estrelas</div>
+                    <div class="gift-note">Um piquenique à noite, com cobertor, lanche favorito e observando o céu de mãos dadas.</div>
+                    <div class="gift-extra">Você, eu e o universo inteiro como cenário.</div>
+                </div>
+                <div class="gift">
+                    <div class="gift-title"><span>💐</span>Buquê personalizado</div>
+                    <div class="gift-note">Flores que você ama, com um cartão explicando o que cada flor significa para mim.</div>
+                    <div class="gift-extra">Um jardim inteiro resumido em você.</div>
+                </div>
+                <div class="gift">
+                    <div class="gift-title"><span>🎧</span>Playlist “Bruna”</div>
+                    <div class="gift-note">Uma playlist com músicas que contam a nossa história e que sempre me lembram de você.</div>
+                    <div class="gift-extra">Cada música, um momento nosso guardado.</div>
+                </div>
+                <div class="gift">
+                    <div class="gift-title"><span>🕯️</span>Noite de spa em casa</div>
+                    <div class="gift-note">Velas, massagem, banho relaxante, cuidados de pele… tudo preparado por mim para você relaxar.</div>
+                    <div class="gift-extra">Você merece ser cuidada com todo carinho do mundo.</div>
+                </div>
+                <div class="gift">
+                    <div class="gift-title"><span>📸</span>Ensaio improvisado</div>
+                    <div class="gift-note">Um dia só tirando fotos suas, espontâneas e engraçadas, com muitos abraços e beijos.</div>
+                    <div class="gift-extra">Registrar o quanto você é linda em todos os detalhes.</div>
+                </div>
+                <div class="gift">
+                    <div class="gift-title"><span>🍫</span>Caixa de momentos doces</div>
+                    <div class="gift-note">Doces e chocolates que você gosta, com bilhetinhos em cada um com motivos pelos quais te amo.</div>
+                    <div class="gift-extra">Doce por fora, mais doce ainda por dentro.</div>
+                </div>
+                <div class="gift">
+                    <div class="gift-title"><span>📝</span>Cartas para o futuro</div>
+                    <div class="gift-note">Várias cartas fechadas para você abrir em momentos especiais: saudade, alegria, conquista, dias difíceis.</div>
+                    <div class="gift-extra">Eu com você em todos os momentos, mesmo em silêncio.</div>
+                </div>
+                <div class="gift">
+                    <div class="gift-title"><span>🎬</span>Cinema em casa</div>
+                    <div class="gift-note">Filme favorito, pipoca, cobertor e o mundo lá fora em pausa, só nós dois.</div>
+                    <div class="gift-extra">O melhor lugar é sempre ao seu lado.</div>
+                </div>
+                <div class="gift">
+                    <div class="gift-title"><span>🔐</span>Caixinha dos segredos</div>
+                    <div class="gift-note">Uma caixa com objetos, fotos e bilhetes que só nós entendemos.</div>
+                    <div class="gift-extra">Um cofre dos nossos segredos e lembranças.</div>
+                </div>
+                <div class="gift">
+                    <div class="gift-title"><span>🌹</span>Rota do amor</div>
+                    <div class="gift-note">Um roteiro pela cidade passando pelos lugares especiais para nós, com pequenas surpresas em cada parada.</div>
+                    <div class="gift-extra">Relembrar tudo que já vivemos e sonhar com o que vem pela frente.</div>
+                </div>
+                <div class="gift">
+                    <div class="gift-title"><span>💍</span>Um pingente significativo</div>
+                    <div class="gift-note">Um colar ou pulseira com um pingente que simbolize algo só nosso.</div>
+                    <div class="gift-extra">Um pedacinho do nosso amor sempre pertinho de você.</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Seção Momentos -->
+    <section id="momentos-section">
+        <div class="card">
+            <div class="momentos-header">
+                <div class="momentos-header-title">
+                    <span>📷</span> Momentos com a Bruna
+                </div>
+                <div class="momentos-input-wrapper">
+                    <div class="momentos-input-label">
+                        Adicione fotos e vídeos dos nossos momentos juntos (eles ficam guardados na nossa galeria para ver de qualquer lugar):
+                    </div>
+                    <label class="momentos-input">
+                        <span>➕</span> Adicionar momentos
+                        <input id="momentos-input" type="file" accept="image/*,video/*" multiple>
+                    </label>
+                </div>
+            </div>
+            <div id="momentos-grid" class="momentos-grid">
+                <div class="momento-placeholder">
+                    Ainda não tem nada aqui, mas este espaço foi feito para guardar nossos sorrisos, viagens,
+                    abraços e todas as pequenas grandes lembranças. 💞
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        Feito com todo o meu <span>❤️</span> para você, Bruna.
+    </footer>
+</div>
+
+<script>
+    // Ajuste aqui para a URL da sua API FastAPI quando estiver no Render/Railway
+    const API_BASE = "http://localhost:8000";
+
+    async function carregarMomentosBackend() {
+        const grid = document.getElementById("momentos-grid");
+        if (!grid) return;
+
+        try {
+            const resp = await fetch(`${API_BASE}/momentos/list`);
+            if (!resp.ok) throw new Error("Erro ao listar momentos");
+            const data = await resp.json();
+
+            const items = data.items || [];
+            grid.innerHTML = "";
+
+            if (!items.length) {
+                const placeholder = document.createElement("div");
+                placeholder.className = "momento-placeholder";
+                placeholder.textContent =
+                    "Ainda não tem nada aqui, mas este espaço foi feito para guardar nossos sorrisos, viagens, abraços e todas as pequenas grandes lembranças. 💞";
+                grid.appendChild(placeholder);
+                return;
+            }
+
+            items.forEach((item) => {
+                const div = document.createElement("div");
+                div.className = "momento-item";
+
+                const url = `${API_BASE}${item.url}`;
+
+                if (item.type === "image") {
+                    const img = document.createElement("img");
+                    img.src = url;
+                    img.alt = "Momento com a Bruna";
+                    div.appendChild(img);
+                } else if (item.type === "video") {
+                    const video = document.createElement("video");
+                    video.src = url;
+                    video.controls = true;
+                    div.appendChild(video);
+                }
+
+                grid.appendChild(div);
+            });
+        } catch (e) {
+            console.error(e);
+        }
+    }
+
+    async function enviarMomentosBackend(files) {
+        const grid = document.getElementById("momentos-grid");
+        if (!files.length || !grid) return;
+
+        const formData = new FormData();
+        files.forEach((file) => formData.append("files", file));
+
+        const placeholder = grid.querySelector(".momento-placeholder");
+        if (placeholder) placeholder.remove();
+
+        // Preview otimista
+        files.forEach((file) => {
+            const div = document.createElement("div");
+            div.className = "momento-item";
+            const url = URL.createObjectURL(file);
+
+            if (file.type.startsWith("image/")) {
+                const img = document.createElement("img");
+                img.src = url;
+                img.alt = "Momento com a Bruna";
+                div.appendChild(img);
+            } else if (file.type.startsWith("video/")) {
+                const video = document.createElement("video");
+                video.src = url;
+                video.controls = true;
+                div.appendChild(video);
+            }
+
+            grid.appendChild(div);
+        });
+
+        try {
+            const resp = await fetch(`${API_BASE}/momentos/upload`, {
+                method: "POST",
+                body: formData,
+            });
+            if (!resp.ok) {
+                throw new Error("Falha ao enviar arquivos");
+            }
+            await carregarMomentosBackend();
+        } catch (e) {
+            console.error(e);
+            alert("Erro ao enviar momentos. Tenta de novo mais tarde.");
+        }
+    }
+
+    function inicializarMomentos() {
+        const input = document.getElementById("momentos-input");
+        if (!input) return;
+
+        carregarMomentosBackend();
+
+        input.addEventListener("change", function () {
+            const files = Array.from(this.files || []);
+            if (!files.length) return;
+
+            enviarMomentosBackend(files);
+            this.value = "";
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", inicializarMomentos);
+</script>
+</body>
+</html>
+
